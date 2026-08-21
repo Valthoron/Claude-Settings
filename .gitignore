@@ -2,7 +2,7 @@
 !.gitignore
 !CLAUDE.md
 !settings.galadriel.json
-!settings.macos.json
+!settings.macbookpro.json
 !keybindings.json
 !agents/
 !agents/**

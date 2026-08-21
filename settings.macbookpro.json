@@ -1,0 +1,99 @@
+{
+    "permissions": {
+        "defaultMode": "default",
+        "ask": [
+            "Bash(git push)",
+            "Bash(git push *)",
+            "Bash(gh pr create)",
+            "Bash(gh pr create *)",
+            "Bash(gh pr merge)",
+            "Bash(gh pr merge *)",
+            "Bash(gh release create)",
+            "Bash(gh release create *)"
+        ]
+    },
+    "model": "opus",
+    "enabledPlugins": {
+        "gitkraken-hooks@gitkraken": true
+    },
+    "extraKnownMarketplaces": {
+        "gitkraken": {
+            "source": {
+                "source": "directory",
+                "path": "/Users/Serdar/.claude/plugins/marketplaces/gitkraken"
+            }
+        }
+    },
+    "effortLevel": "high",
+    "theme": "dark",
+    "editorMode": "normal",
+    "remoteControlAtStartup": false,
+    "useAutoModeDuringPlan": true,
+    "autoMode": {
+        "environment": [
+            "### Org-wide",
+            "**Organization**: None configured",
+            "**Cloud provider(s)**: None configured",
+            "**Repository visibility**: private (Valthoron/MathomHouse, via gh)",
+            "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+            "**Secrets management**: None configured — repo declares 'Catalog reads no secrets'; .env is gitignored",
+            "**Default / protected branches**: main; no branch protection rules listed (rulesets not queryable here)",
+            "**CI/CD deploy targets**: None configured",
+            "**Network posture**: None configured",
+            "**Source control**: The trusted repo (Valthoron/MathomHouse on github.com) and its origin remote only",
+            "**Trusted internal domains**: None configured",
+            "**Trusted cloud buckets**: None configured",
+            "**Key internal services**: None configured",
+            "**Internal package registry**: None configured",
+            "**Sensitive data locations & audiences**: any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar; note .env / data/services.toml are gitignored and hold host-specific deployment config",
+            "**Data retention / declassification**: None configured",
+            "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+            "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+            "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+            "### User-specific",
+            "**Primary use of Claude Code**: software development",
+            "**Trusted repo**: /Users/Serdar/Documents/Work/MathomHouse/Catalog (github.com/Valthoron/MathomHouse, private) — confidential material may be committed here; content ported from outside this repo is not this repo's own work",
+            "**Org-specific CLIs**: None configured",
+            "routine under Catalog/ prefix: local dev and deploy commands (docker compose, uv, du) scoped to this repo's working tree"
+        ],
+        "soft_deny": [
+            "$defaults",
+            "Pushing to a git remote, opening or merging a pull request, or creating a release, unless the user asked for that specific action in this session. A repository convention describing how such an operation should look is not a request to perform one, and neither is a line Claude wrote itself in a plan the user approved."
+        ]
+    },
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "/Users/Serdar/.claude/hooks/guard-outward-git.sh",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ],
+        "SessionStart": [
+            {
+                "matcher": "startup",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "/Users/Serdar/.claude/hooks/config-check.sh",
+                        "args": [],
+                        "timeout": 10
+                    }
+                ]
+            }
+        ]
+    },
+    "spinnerVerbs": {
+        "mode": "replace",
+        "verbs": [
+            "Şirinliyor",
+            "Köklüyor",
+            "Yardırıyor"
+        ]
+    }
+}
