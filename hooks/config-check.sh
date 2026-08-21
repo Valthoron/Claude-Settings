@@ -1,5 +1,6 @@
 #!/bin/bash
 cd ~/.claude || exit 0
+
 branch=$(git symbolic-ref --quiet --short HEAD)
 if [ "$branch" != "main" ]; then
     if [ -n "$branch" ]; then
