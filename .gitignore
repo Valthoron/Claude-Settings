@@ -1,0 +1,17 @@
+*
+!.gitignore
+!CLAUDE.md
+!settings.json
+!keybindings.json
+!rules/
+!rules/**
+!skills/
+!skills/**
+!commands/
+!commands/**
+!agents/
+!agents/**
+!output-styles/
+!output-styles/**
+!themes/
+!themes/**
