@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "gitkraken-hooks@gitkraken": true
+  },
+  "extraKnownMarketplaces": {
+    "gitkraken": {
+      "source": {
+        "source": "directory",
+        "path": "C:\\Users\\Serdar\\.claude\\plugins\\marketplaces\\gitkraken"
+      }
+    },
+    "nocodb-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "nocodb/agent-skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark",
+  "editorMode": "normal",
+  "inputNeededNotifEnabled": false
+}

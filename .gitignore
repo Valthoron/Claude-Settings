@@ -1,7 +1,8 @@
 *
 !.gitignore
 !CLAUDE.md
-!settings.json
+!settings.windows.json
+!settings.macos.json
 !keybindings.json
 !rules/
 !rules/**
