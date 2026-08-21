@@ -1,7 +1,7 @@
 *
 !.gitignore
 !CLAUDE.md
-!settings.windows.json
+!settings.galadriel.json
 !settings.macos.json
 !keybindings.json
 !agents/

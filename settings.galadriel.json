@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "defaultMode": "plan"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "C:\\Users\\Serdar\\.claude\\hooks\\config-check.ps1"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "gitkraken-hooks@gitkraken": true
+  },
+  "extraKnownMarketplaces": {
+    "gitkraken": {
+      "source": {
+        "source": "directory",
+        "path": "C:\\Users\\Serdar\\.claude\\plugins\\marketplaces\\gitkraken"
+      }
+    },
+    "nocodb-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "nocodb/agent-skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark",
+  "editorMode": "normal",
+  "inputNeededNotifEnabled": false
+}
