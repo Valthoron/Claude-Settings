@@ -16,7 +16,7 @@ $publishes += '|(^|[^a-zA-Z0-9_-])gh\s+release\s+create([^a-zA-Z0-9_-]|$)'
 
 if ($command -cmatch $publishes) {
     @'
-{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"This command publishes to a remote. Claude may not run it unless you asked for this specific action, in this session, in your own words."}}
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"This command publishes to a remote."}}
 '@
 }
 

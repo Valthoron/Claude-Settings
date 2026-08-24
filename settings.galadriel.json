@@ -1,6 +1,72 @@
 {
+    "attribution": {
+        "commit": "",
+        "pr": "",
+        "sessionUrl": false
+    },
+    "autoUpdatesChannel": "latest",
+    "editorMode": "normal",
+    "effortLevel": "high",
+    "enabledPlugins": {
+        "gitkraken-hooks@gitkraken": true
+    },
+    "extraKnownMarketplaces": {
+        "gitkraken": {
+            "source": {
+                "path": "C:\\Users\\Serdar\\.claude\\plugins\\marketplaces\\gitkraken",
+                "source": "directory"
+            }
+        },
+        "nocodb-agent-skills": {
+            "source": {
+                "repo": "nocodb/agent-skills",
+                "source": "github"
+            }
+        }
+    },
+    "hooks": {
+        "PreToolUse": [
+            {
+                "hooks": [
+                    {
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-File",
+                            "C:\\Users\\Serdar\\.claude\\hooks\\guard-outward-git.ps1"
+                        ],
+                        "command": "powershell.exe",
+                        "timeout": 10,
+                        "type": "command"
+                    }
+                ],
+                "matcher": "Bash|PowerShell"
+            }
+        ],
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-File",
+                            "C:\\Users\\Serdar\\.claude\\hooks\\config-check.ps1"
+                        ],
+                        "command": "powershell.exe",
+                        "timeout": 10,
+                        "type": "command"
+                    }
+                ],
+                "matcher": "startup"
+            }
+        ]
+    },
+    "inputNeededNotifEnabled": false,
+    "model": "opus",
     "permissions": {
-        "defaultMode": "plan",
         "ask": [
             "Bash(git push)",
             "Bash(git push *)",
@@ -10,73 +76,10 @@
             "Bash(gh pr merge *)",
             "Bash(gh release create)",
             "Bash(gh release create *)"
-        ]
-    },
-    "model": "opus",
-    "hooks": {
-        "SessionStart": [
-            {
-                "matcher": "startup",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "powershell.exe",
-                        "args": [
-                            "-NoProfile",
-                            "-ExecutionPolicy",
-                            "Bypass",
-                            "-File",
-                            "C:\\Users\\Serdar\\.claude\\hooks\\config-check.ps1"
-                        ],
-                        "timeout": 10
-                    }
-                ]
-            }
         ],
-        "PreToolUse": [
-            {
-                "matcher": "Bash|PowerShell",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "powershell.exe",
-                        "args": [
-                            "-NoProfile",
-                            "-ExecutionPolicy",
-                            "Bypass",
-                            "-File",
-                            "C:\\Users\\Serdar\\.claude\\hooks\\guard-outward-git.ps1"
-                        ],
-                        "timeout": 10
-                    }
-                ]
-            }
-        ]
+        "defaultMode": "plan"
     },
-    "enabledPlugins": {
-        "gitkraken-hooks@gitkraken": true
-    },
-    "extraKnownMarketplaces": {
-        "gitkraken": {
-            "source": {
-                "source": "directory",
-                "path": "C:\\Users\\Serdar\\.claude\\plugins\\marketplaces\\gitkraken"
-            }
-        },
-        "nocodb-agent-skills": {
-            "source": {
-                "source": "github",
-                "repo": "nocodb/agent-skills"
-            }
-        }
-    },
-    "effortLevel": "high",
-    "autoUpdatesChannel": "latest",
-    "theme": "dark",
-    "editorMode": "normal",
-    "inputNeededNotifEnabled": false,
     "remoteControlAtStartup": false,
-    "useAutoModeDuringPlan": true,
     "spinnerVerbs": {
         "mode": "replace",
         "verbs": [
@@ -84,5 +87,7 @@
             "Köklüyor",
             "Yardırıyor"
         ]
-    }
+    },
+    "theme": "dark",
+    "useAutoModeDuringPlan": false
 }

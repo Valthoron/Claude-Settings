@@ -12,7 +12,7 @@ publishes="$publishes"'|(^|[^[:alnum:]_-])gh[[:space:]]+release[[:space:]]+creat
 
 if printf '%s' "$command" | grep -Eq "$publishes"; then
     cat <<'JSON'
-{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"This command publishes to a remote. Claude may not run it unless you asked for this specific action, in this session, in your own words."}}
+{"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"ask","permissionDecisionReason":"This command publishes to a remote."}}
 JSON
 fi
 
