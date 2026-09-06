@@ -8,9 +8,17 @@
     "editorMode": "normal",
     "effortLevel": "high",
     "enabledPlugins": {
-        "gitkraken-hooks@gitkraken": true
+        "asd-ste100@chele-bi": false,
+        "gitkraken-hooks@gitkraken": false,
+        "swift-lsp@claude-plugins-official": true
     },
     "extraKnownMarketplaces": {
+        "chele-bi": {
+            "source": {
+                "source": "git",
+                "url": "https://github.com/woosal1337/blog.git"
+            }
+        },
         "gitkraken": {
             "source": {
                 "path": "/Users/Serdar/.claude/plugins/marketplaces/gitkraken",
@@ -72,9 +80,14 @@
         "verbs": [
             "Şirinliyor",
             "Köklüyor",
-            "Yardırıyor"
+            "Yardırıyor",
+            "Gagalıyor",
+            "Butuböküyor",
+            "Kasıyor",
+            "Zagalıyor",
+            "Şeberiyor"
         ]
     },
     "theme": "dark",
-    "useAutoModeDuringPlan": false
+    "useAutoModeDuringPlan": true
 }
