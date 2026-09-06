@@ -1,6 +1,7 @@
 *
 !.gitignore
 !CLAUDE.md
+!CLAUDE-CHAT.md
 !settings.galadriel.json
 !settings.macbookpro.json
 !keybindings.json
@@ -18,3 +19,4 @@
 !skills/**
 !themes/
 !themes/**
+.DS_Store

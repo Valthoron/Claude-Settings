@@ -32,6 +32,31 @@ problem, with the fewest moving parts, and say so in the fewest words.
 - Keep abstraction shallow. Add a layer only when it pays for itself.
 - YAGNI. Nothing speculative, no "might be useful later" code paths.
 
+## Removals and revisions
+- Removing something means removing it. Never leave a comment, placeholder, or stub
+  noting that it used to exist or why it was taken out. Same for renamed or moved
+  symbols - no forwarding notes.
+- No "changed", "new", "updated", "was X", or dated annotations on anything you
+  touch. Version control carries that.
+- Explain a removal in the reply, not in the file.
+- If the absence of something is a requirement, it belongs in the design document,
+  not as a comment in the product.
+- This applies to every artifact, not only code: documents, specs, instructions,
+  roadmaps, configs, prompts. A revised document must read as though it was written
+  that way from the start. No "correction to the earlier version", no "previously
+  this said", no "note: this supersedes section N", no framing that assumes the
+  reader saw a prior draft.
+- When new information changes a document, edit the sections it affects. Never
+  append a section that overrides earlier ones, and never leave a stale section
+  standing next to its replacement.
+- A reader of a document is a user of the result, not a reviewer of the process.
+  Iteration history goes in the chat reply, once.
+- Exception: files whose purpose is recording change history - changelogs,
+  migration notes, ADRs, project dev logs, session/progress files. There the
+  record is the product.
+- Not covered by this rule: language-level deprecation markers on symbols that
+  still exist. Those are part of the contract.
+
 ## Code
 - Readability first. Code is written for the next reader.
 - Explicit over clever. Never trade understandability for brevity.
@@ -42,20 +67,6 @@ problem, with the fewest moving parts, and say so in the fewest words.
 - For public API documentation, document the contract, semantics, errors, and
   invariants - not a paraphrase of the signature.
 - Remove comments when they stop adding information.
-
-## Removals
-- Removing something means removing it. Never leave a comment, placeholder, or
-  stub noting that it used to exist or why it was taken out. Same for renamed or
-  moved symbols - no forwarding notes.
-- No "changed", "new", "updated", "was X", or dated annotations on code you touch.
-  Version control carries that.
-- Explain a removal in the reply, not in the file.
-- If the absence of something is a requirement, it belongs in the design
-  document, not as a comment in the product.
-- Exception: files whose purpose is recording change history - changelogs,
-  migration notes, ADRs, project dev logs. There the record is the product.
-- Not covered by this rule: language-level deprecation markers on symbols that
-  still exist. Those are part of the contract.
 
 ## Dependencies
 - Language built-ins first. Standard library second.
