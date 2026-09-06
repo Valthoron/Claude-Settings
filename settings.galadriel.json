@@ -8,7 +8,9 @@
     "editorMode": "normal",
     "effortLevel": "high",
     "enabledPlugins": {
-        "gitkraken-hooks@gitkraken": true
+        "gitkraken-hooks@gitkraken": false,
+        "asd-ste100@chele-bi": false,
+        "swift-lsp@claude-plugins-official": true
     },
     "extraKnownMarketplaces": {
         "gitkraken": {
@@ -21,6 +23,12 @@
             "source": {
                 "repo": "nocodb/agent-skills",
                 "source": "github"
+            }
+        },
+        "chele-bi": {
+            "source": {
+                "source": "git",
+                "url": "https://github.com/woosal1337/blog.git"
             }
         }
     },
@@ -65,7 +73,7 @@
         ]
     },
     "inputNeededNotifEnabled": false,
-    "model": "opus",
+    "model": "sonnet",
     "permissions": {
         "ask": [
             "Bash(git push)",
@@ -85,9 +93,14 @@
         "verbs": [
             "Şirinliyor",
             "Köklüyor",
-            "Yardırıyor"
+            "Yardırıyor",
+            "Gagalıyor",
+            "Butuböküyor",
+            "Kasıyor",
+            "Zagalıyor",
+            "Şeberiyor"
         ]
     },
     "theme": "dark",
-    "useAutoModeDuringPlan": false
+    "useAutoModeDuringPlan": true
 }
