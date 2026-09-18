@@ -1,5 +1,6 @@
 *
 !.gitignore
+!.gitattributes
 !CLAUDE.md
 !CLAUDE-CHAT.md
 !settings.galadriel.json

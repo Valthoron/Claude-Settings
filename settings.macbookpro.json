@@ -9,8 +9,8 @@
     "effortLevel": "high",
     "enabledPlugins": {
         "asd-ste100@chele-bi": false,
-        "gitkraken-hooks@gitkraken": false,
-        "swift-lsp@claude-plugins-official": true
+        "swift-lsp@claude-plugins-official": true,
+        "xcode-integration@xcode": true
     },
     "extraKnownMarketplaces": {
         "chele-bi": {
@@ -30,6 +30,21 @@
                 "repo": "nocodb/agent-skills",
                 "source": "github"
             }
+        },
+        "xcode": {
+            "source": {
+                "name": "xcode",
+                "plugins": [
+                    {
+                        "name": "xcode-integration",
+                        "source": {
+                            "command": "xcrun agent plugin path --plugin-format claude",
+                            "source": "command"
+                        }
+                    }
+                ],
+                "source": "settings"
+            }
         }
     },
     "hooks": {
@@ -45,12 +60,34 @@
                 "matcher": "Bash"
             }
         ],
+        "SessionEnd": [
+            {
+                "hooks": [
+                    {
+                        "args": [
+                            "save"
+                        ],
+                        "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
+                        "timeout": 10,
+                        "type": "command"
+                    }
+                ]
+            }
+        ],
         "SessionStart": [
             {
                 "hooks": [
                     {
                         "args": [],
                         "command": "/Users/Serdar/.claude/hooks/config-check.sh",
+                        "timeout": 10,
+                        "type": "command"
+                    },
+                    {
+                        "args": [
+                            "save"
+                        ],
+                        "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
                         "timeout": 10,
                         "type": "command"
                     }
@@ -88,6 +125,7 @@
             "Şeberiyor"
         ]
     },
+    "syncClaudeAiSkills": false,
     "theme": "dark",
     "useAutoModeDuringPlan": true
 }

@@ -1,0 +1,4 @@
+#!/bin/sh
+# A rebasing pull runs this hook instead of post-merge. An amend changes nothing to load.
+[ "$1" = rebase ] || exit 0
+exec hooks/git/post-merge

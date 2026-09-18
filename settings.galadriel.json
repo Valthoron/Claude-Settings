@@ -66,9 +66,41 @@
                         "command": "powershell.exe",
                         "timeout": 10,
                         "type": "command"
+                    },
+                    {
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-File",
+                            "C:\\Users\\Serdar\\.claude\\hooks\\settings-sync.ps1",
+                            "save"
+                        ],
+                        "command": "powershell.exe",
+                        "timeout": 10,
+                        "type": "command"
                     }
                 ],
                 "matcher": "startup"
+            }
+        ],
+        "SessionEnd": [
+            {
+                "hooks": [
+                    {
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-File",
+                            "C:\\Users\\Serdar\\.claude\\hooks\\settings-sync.ps1",
+                            "save"
+                        ],
+                        "command": "powershell.exe",
+                        "timeout": 10,
+                        "type": "command"
+                    }
+                ]
             }
         ]
     },

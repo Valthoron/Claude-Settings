@@ -1,0 +1,9 @@
+#!/bin/sh
+# Git for Windows runs hooks with its own sh, which has no jq to validate JSON with,
+# so Windows hands the work to the PowerShell twin.
+case "$(uname -s)" in
+    MINGW*|MSYS*|CYGWIN*)
+        exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File hooks/settings-sync.ps1 load ;;
+    *)
+        exec hooks/settings-sync.sh load ;;
+esac
