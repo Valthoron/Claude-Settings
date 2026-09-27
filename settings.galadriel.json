@@ -8,17 +8,15 @@
     "editorMode": "normal",
     "effortLevel": "high",
     "enabledPlugins": {
-        "gitkraken-hooks@gitkraken": false,
         "asd-ste100@chele-bi": false,
-        "swift-lsp@claude-plugins-official": true
+        "swift-lsp@claude-plugins-official": false,
+        "typesafe@typesafe-ai": false,
+        "xcode-integration@xcode": false,
+        "notion@claude-plugins-official": true,
+        "telemetry@builtin": false,
+        "skill-creator@claude-plugins-official": true
     },
     "extraKnownMarketplaces": {
-        "gitkraken": {
-            "source": {
-                "path": "C:\\Users\\Serdar\\.claude\\plugins\\marketplaces\\gitkraken",
-                "source": "directory"
-            }
-        },
         "nocodb-agent-skills": {
             "source": {
                 "repo": "nocodb/agent-skills",
@@ -29,6 +27,12 @@
             "source": {
                 "source": "git",
                 "url": "https://github.com/woosal1337/blog.git"
+            }
+        },
+        "typesafe-ai": {
+            "source": {
+                "source": "github",
+                "repo": "typesafe-ai/skills"
             }
         }
     },
@@ -134,5 +138,11 @@
         ]
     },
     "theme": "dark",
-    "useAutoModeDuringPlan": true
+    "useAutoModeDuringPlan": true,
+    "modelSettings": {
+        "claude-sonnet-5": {
+            "effortLevel": "xhigh"
+        }
+    },
+    "syncClaudeAiSkills": false
 }
