@@ -1,131 +1,140 @@
 {
-    "attribution": {
-        "commit": "",
-        "pr": "",
-        "sessionUrl": false
-    },
-    "autoUpdatesChannel": "latest",
-    "editorMode": "normal",
-    "effortLevel": "high",
-    "enabledPlugins": {
-        "asd-ste100@chele-bi": false,
-        "swift-lsp@claude-plugins-official": true,
-        "xcode-integration@xcode": true
-    },
-    "extraKnownMarketplaces": {
-        "chele-bi": {
-            "source": {
-                "source": "git",
-                "url": "https://github.com/woosal1337/blog.git"
-            }
-        },
-        "gitkraken": {
-            "source": {
-                "path": "/Users/Serdar/.claude/plugins/marketplaces/gitkraken",
-                "source": "directory"
-            }
-        },
-        "nocodb-agent-skills": {
-            "source": {
-                "repo": "nocodb/agent-skills",
-                "source": "github"
-            }
-        },
-        "xcode": {
-            "source": {
-                "name": "xcode",
-                "plugins": [
-                    {
-                        "name": "xcode-integration",
-                        "source": {
-                            "command": "xcrun agent plugin path --plugin-format claude",
-                            "source": "command"
-                        }
-                    }
-                ],
-                "source": "settings"
-            }
-        }
-    },
-    "hooks": {
-        "PreToolUse": [
-            {
-                "hooks": [
-                    {
-                        "command": "/Users/Serdar/.claude/hooks/guard-outward-git.sh",
-                        "timeout": 10,
-                        "type": "command"
-                    }
-                ],
-                "matcher": "Bash"
-            }
-        ],
-        "SessionEnd": [
-            {
-                "hooks": [
-                    {
-                        "args": [
-                            "save"
-                        ],
-                        "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
-                        "timeout": 10,
-                        "type": "command"
-                    }
-                ]
-            }
-        ],
-        "SessionStart": [
-            {
-                "hooks": [
-                    {
-                        "args": [],
-                        "command": "/Users/Serdar/.claude/hooks/config-check.sh",
-                        "timeout": 10,
-                        "type": "command"
-                    },
-                    {
-                        "args": [
-                            "save"
-                        ],
-                        "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
-                        "timeout": 10,
-                        "type": "command"
-                    }
-                ],
-                "matcher": "startup"
-            }
+  "syncClaudeAiSkills": false,
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "permissions": {
+    "ask": [
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(gh pr create)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr merge)",
+      "Bash(gh pr merge *)",
+      "Bash(gh release create)",
+      "Bash(gh release create *)"
+    ],
+    "defaultMode": "plan"
+  },
+  "model": "opus",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/Serdar/.claude/hooks/guard-outward-git.sh",
+            "timeout": 10
+          }
         ]
-    },
-    "inputNeededNotifEnabled": false,
-    "model": "opus",
-    "permissions": {
-        "ask": [
-            "Bash(git push)",
-            "Bash(git push *)",
-            "Bash(gh pr create)",
-            "Bash(gh pr create *)",
-            "Bash(gh pr merge)",
-            "Bash(gh pr merge *)",
-            "Bash(gh release create)",
-            "Bash(gh release create *)"
-        ],
-        "defaultMode": "plan"
-    },
-    "remoteControlAtStartup": false,
-    "spinnerVerbs": {
-        "mode": "replace",
-        "verbs": [
-            "Şirinliyor",
-            "Köklüyor",
-            "Yardırıyor",
-            "Gagalıyor",
-            "Butuböküyor",
-            "Kasıyor",
-            "Zagalıyor",
-            "Şeberiyor"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
+            "args": [
+              "save"
+            ],
+            "timeout": 10
+          }
         ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/Serdar/.claude/hooks/config-check.sh",
+            "args": [],
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "/Users/Serdar/.claude/hooks/settings-sync.sh",
+            "args": [
+              "save"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "asd-ste100@chele-bi": false,
+    "swift-lsp@claude-plugins-official": false,
+    "typesafe@typesafe-ai": false,
+    "xcode-integration@xcode": false,
+    "notion@claude-plugins-official": true,
+    "telemetry@builtin": false,
+    "skill-creator@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "chele-bi": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/woosal1337/blog.git"
+      }
     },
-    "syncClaudeAiSkills": false,
-    "theme": "dark",
-    "useAutoModeDuringPlan": true
+    "nocodb-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "nocodb/agent-skills"
+      }
+    },
+    "typesafe-ai": {
+      "source": {
+        "source": "github",
+        "repo": "typesafe-ai/skills"
+      }
+    },
+    "xcode": {
+      "source": {
+        "source": "settings",
+        "name": "xcode",
+        "plugins": [
+          {
+            "name": "xcode-integration",
+            "source": {
+              "source": "command",
+              "command": "xcrun agent plugin path --plugin-format claude"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Şirinliyor",
+      "Köklüyor",
+      "Yardırıyor",
+      "Gagalıyor",
+      "Butuböküyor",
+      "Kasıyor",
+      "Zagalıyor",
+      "Şeberiyor"
+    ]
+  },
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "dark",
+  "editorMode": "normal",
+  "remoteControlAtStartup": false,
+  "inputNeededNotifEnabled": false,
+  "useAutoModeDuringPlan": true
 }
