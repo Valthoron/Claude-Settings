@@ -75,7 +75,7 @@
     "xcode-integration@xcode": false,
     "notion@claude-plugins-official": true,
     "telemetry@builtin": false,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": false
   },
   "extraKnownMarketplaces": {
     "chele-bi": {
