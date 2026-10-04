@@ -1,2 +1,3 @@
 hooks/git/* text eol=lf
 hooks/*.sh text eol=lf
+settings.*.json text eol=lf

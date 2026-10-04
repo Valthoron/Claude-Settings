@@ -4,35 +4,46 @@
         "pr": "",
         "sessionUrl": false
     },
+    "autoMode": {
+        "allow": [
+            "$defaults",
+            "Running `bash /tmp/rename_movies.sh` on ivybush, which renames, moves, creates and deletes files only under /home/qbtuser/Downloads, is allowed once the user has approved the rename plan in this session.",
+            "Running `bash /tmp/rename_publications.sh` on ivybush, which renames, moves and creates files and folders only under /home/qbtuser/Downloads and removes only folders its own moves emptied, is allowed once the user has approved the rename plan in this session."
+        ],
+        "environment": [
+            "$defaults",
+            "Home LAN: galadriel (this machine), ivybush, prancingpony and greendragon are the user's own machines. Read-only diagnostics on them are routine."
+        ]
+    },
     "autoUpdatesChannel": "latest",
     "editorMode": "normal",
     "effortLevel": "high",
     "enabledPlugins": {
         "asd-ste100@chele-bi": false,
-        "swift-lsp@claude-plugins-official": false,
-        "typesafe@typesafe-ai": false,
-        "xcode-integration@xcode": false,
         "notion@claude-plugins-official": true,
+        "skill-creator@claude-plugins-official": false,
+        "swift-lsp@claude-plugins-official": false,
         "telemetry@builtin": false,
-        "skill-creator@claude-plugins-official": true
+        "typesafe@typesafe-ai": false,
+        "xcode-integration@xcode": false
     },
     "extraKnownMarketplaces": {
-        "nocodb-agent-skills": {
-            "source": {
-                "repo": "nocodb/agent-skills",
-                "source": "github"
-            }
-        },
         "chele-bi": {
             "source": {
                 "source": "git",
                 "url": "https://github.com/woosal1337/blog.git"
             }
         },
+        "nocodb-agent-skills": {
+            "source": {
+                "repo": "nocodb/agent-skills",
+                "source": "github"
+            }
+        },
         "typesafe-ai": {
             "source": {
-                "source": "github",
-                "repo": "typesafe-ai/skills"
+                "repo": "typesafe-ai/skills",
+                "source": "github"
             }
         }
     },
@@ -54,6 +65,25 @@
                     }
                 ],
                 "matcher": "Bash|PowerShell"
+            }
+        ],
+        "SessionEnd": [
+            {
+                "hooks": [
+                    {
+                        "args": [
+                            "-NoProfile",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-File",
+                            "C:\\Users\\Serdar\\.claude\\hooks\\settings-sync.ps1",
+                            "save"
+                        ],
+                        "command": "powershell.exe",
+                        "timeout": 10,
+                        "type": "command"
+                    }
+                ]
             }
         ],
         "SessionStart": [
@@ -87,29 +117,15 @@
                 ],
                 "matcher": "startup"
             }
-        ],
-        "SessionEnd": [
-            {
-                "hooks": [
-                    {
-                        "args": [
-                            "-NoProfile",
-                            "-ExecutionPolicy",
-                            "Bypass",
-                            "-File",
-                            "C:\\Users\\Serdar\\.claude\\hooks\\settings-sync.ps1",
-                            "save"
-                        ],
-                        "command": "powershell.exe",
-                        "timeout": 10,
-                        "type": "command"
-                    }
-                ]
-            }
         ]
     },
     "inputNeededNotifEnabled": false,
-    "model": "sonnet",
+    "model": "opus",
+    "modelSettings": {
+        "claude-sonnet-5": {
+            "effortLevel": "xhigh"
+        }
+    },
     "permissions": {
         "ask": [
             "Bash(git push)",
@@ -137,12 +153,7 @@
             "Şeberiyor"
         ]
     },
+    "syncClaudeAiSkills": false,
     "theme": "dark",
-    "useAutoModeDuringPlan": true,
-    "modelSettings": {
-        "claude-sonnet-5": {
-            "effortLevel": "xhigh"
-        }
-    },
-    "syncClaudeAiSkills": false
+    "useAutoModeDuringPlan": true
 }

@@ -14,7 +14,8 @@ $base = '.settings-baseline.json'
 
 function Say([string]$Text) {
     if ($Mode -eq 'save') {
-        '{{"systemMessage":"Claude-Config: ❕ {0}"}}' -f $Text
+        [Console]::OutputEncoding = [Text.Encoding]::UTF8
+        @{ systemMessage = "Claude-Config: $([char]0x2755) $Text" } | ConvertTo-Json -Compress
     } else {
         [Console]::Error.WriteLine("Claude-Config: $Text")
     }
